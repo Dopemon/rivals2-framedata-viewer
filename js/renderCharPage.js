@@ -15,7 +15,9 @@ $(`#home-container`).append(charMoveCard({
         }
     ]
 }));
-$(`#home-container`).append(charMoveCard({group: "Special Attacks"}));
+$(`#home-container`).append(charMoveCard({
+    group: "Special Attacks"
+}));
 $(`#home-container`).append(charMoveCard({
     group: "Aerial Attacks",
     moves:[
@@ -33,4 +35,6 @@ $(`#home-container`).append(charMoveCard({
         }
     ]
 }));
-$(`#home-container`).append(charMoveCard({group: "Grab Attacks"}));
+$(`#home-container`).append(charMoveCard({
+    group: "Grab Attacks"
+}));

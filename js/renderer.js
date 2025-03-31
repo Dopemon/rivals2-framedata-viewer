@@ -18,8 +18,4 @@ var allCharInfo = [
 
 var dividedCharInfo = chunkArray(allCharInfo, 3);
 
-dividedCharInfo.forEach(charGroup => {
-    homeContainer.append(homeContainerRow(charGroup));
-})
-
-console.log(dividedCharInfo);
+dividedCharInfo.forEach(charGroup => { homeContainer.append(homeContainerRow(charGroup)); })

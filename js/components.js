@@ -43,13 +43,15 @@ let charMoveCard = (charMoveData) => $(`
     </div>
 
     <div id="${charMoveData.group.split(' ').join('-')}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body d-flex justify-content-center">
-        ${charMoveData.moves?.map(m => `
-            <div class="col-lg-6 col-sm-10">
-                <h4 class="d-block">${m.presentationName}</h4>
-                <div class="d-block"><div class="fd-modal">${m.nhb} && ${m.whb}</div></div>
-            </div>
-        `)}
+      <div class="card-body d-block offset-sm-1 offset-lg-0">
+        <div class="row">
+            ${charMoveData.moves?.map(m => `
+                <div class="col-lg-6 col-sm-10">
+                    <h4 class="d-block">${m.presentationName}</h4>
+                    <div class="d-block"><div class="fd-modal">${m.nhb} && ${m.whb}</div></div>
+                </div>
+            `).join('')}
+        </div>
       </div>
     </div>
 </div>
