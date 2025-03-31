@@ -65,13 +65,15 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     }));
   
     playButton.on('click', () => {[video1, video2].forEach(el => el[0].play())});
-    pauseButton.on('click', () => {[video1, video2].forEach(el => {
-        let newTimestamp = Math.floor(video1[0].currentTime/0.017)*0.017
+    pauseButton.on('click', () => {
+        let newTimestamp = Math.floor(video1[0].currentTime/0.017)*0.017;
         video1[0].pause(); 
         video2[0].pause();
-        video1[0].currentTime=newTimestamp;
-        video2[0].currentTime=newTimestamp;
-    })});
+        requestAnimationFrame(()=>{
+            video1[0].currentTime=newTimestamp;
+            video2[0].currentTime=newTimestamp;
+        })
+    });
   
     [playButton, pauseButton].forEach( el => el.on('click', () => { 
       [playButton, pauseButton].forEach(el => toggleShow(el)); 
