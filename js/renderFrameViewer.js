@@ -5,8 +5,8 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let url1 = modal.text().split("&&")[0].trim();
     let url2 = modal.text().split("&&")[1].trim();
     let currentFrame = url1.length > 2 ? url1.split("?f=").pop().trim() : 0;
-    let video1 = $(`<video class="noHitboxes top"></video>`);
-    let video2 = $(`<video class="yesHitboxes bottom"></video>`);
+    let video1 = $(`<video class="noHitboxes top" preload="auto"></video>`);
+    let video2 = $(`<video class="yesHitboxes bottom" preload="auto"></video>`);
     let source1 = $(`<source src="${url1}">Your browser does not support the video tag.</source>`);
     let source2 = $(`<source src="${url2}">Your browser does not support the video tag.</source>`);
     let controlsContainer = $( `<div class=""></div>` );
@@ -87,7 +87,16 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     const showElement = (hiding) => {hiding.removeClass("hide").addClass("show");}
     const toggleShow = (el) => { el.hasClass("show") ? hideElement(el) : showElement(el) }
         
-    [video1, video2].forEach( el => el.on('loadedmetadata', () => { el[0].play(); el[0].currentTime = 0+(currentFrame*oneFrameLength); el[0].pause(); el[0].loop=true }));
+    [video1, video2].forEach( el => el.on('canplaythrough', () => { 
+        el[0].load();
+        el[0].play(); 
+        el[0].currentTime = 0+(currentFrame*oneFrameLength); 
+        el[0].pause(); 
+        el[0].loop=true; 
+        el.off('canplaythrough');
+    }));
+
+    [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${event}`)}));
     backwards.on('click', (e) => { [video1, video2].forEach(el => {if((el[0].currentTime -= oneFrameLength) <= 0){el[0].currentTime = el[0].duration;}})});
-    forwards.on('click', (e) => { [video1, video2].forEach(el => {if((el[0].currentTime += oneFrameLength) >= el[0].duration){el[0].currentTime = 0;} })});
+    forwards.on('click', (e) => { [video1, video2].forEach(el => { if ((el[0].currentTime += oneFrameLength) >= el[0].duration) { el[0].currentTime = 0; }}) });
   }));
