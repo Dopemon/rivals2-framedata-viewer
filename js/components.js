@@ -42,7 +42,7 @@ let charMoveCard = (charMoveData) => $(`
       </h5>
     </div>
 
-    <div id="${charMoveData.group.split(' ').join('-')}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+    <div id="${charMoveData.group.split(' ').join('-')}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body d-block offset-sm-1 offset-lg-0">
         <div class="row">
             ${charMoveData.moves?.map(m => `
