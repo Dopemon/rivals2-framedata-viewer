@@ -8,7 +8,7 @@ let charMoveCard = (charName, groupName, moves) => $(`
           </h5>
         </div>
     
-        <div id="${groupName.split(' ').join('-')}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="${groupName.split(' ').join('-')}" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body d-block offset-sm-1 offset-lg-0">
             <div class="row -mt-5">
                 ${moves?.map(m => `
