@@ -14,10 +14,10 @@ const allCharacterData = {
                 { fullName: "Down Tilt", shortName: "Dtilt", startFrame: 6 }
             ],
             Aerial: [
-                { fullName: "Forward Air", shortName: "Fair", startFrame: 6 },
+                { fullName: "Forward Air", shortName: "Fair", startFrame: 5 },
                 { fullName: "Up Air", shortName: "Uair", startFrame: 15 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 15 },
-                { fullName: "Back Air", shortName: "Bair", startFrame: 8 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 6 },
                 { fullName: "Neutral Air", shortName: "Nair", startFrame: 9 },
             ],
             Special: [],
@@ -56,7 +56,7 @@ const allCharacterData = {
                 { fullName: "Down Tilt", shortName: "Dtilt", startFrame: 6 }
             ],
             Aerial: [
-                { fullName: "Forward Air", shortName: "Fair", startFrame: 6 },
+                { fullName: "Forward Air", shortName: "Fair", startFrame: 4 },
                 { fullName: "Up Air", shortName: "Uair", startFrame: 7 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 11 },
                 { fullName: "Back Air", shortName: "Bair", startFrame: 13 },
@@ -97,10 +97,10 @@ const allCharacterData = {
             ],
             Aerial: [
                 { fullName: "Forward Air", shortName: "Fair", startFrame: 10 },
-                { fullName: "Up Air", shortName: "Uair", startFrame: 10 },
+                { fullName: "Up Air", shortName: "Uair", startFrame: 9 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 15 },
                 { fullName: "Back Air", shortName: "Bair", startFrame: 8 },
-                { fullName: "Neutral Air", shortName: "Nair", startFrame: 7 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 6 },
             ],
             Special: [],
             Grab: [
@@ -179,8 +179,8 @@ const allCharacterData = {
                 { fullName: "Forward Air", shortName: "Fair", startFrame: 7 },
                 { fullName: "Up Air", shortName: "Uair", startFrame: 11 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 17 },
-                { fullName: "Back Air", shortName: "Bair", startFrame: 9 },
-                { fullName: "Neutral Air", shortName: "Nair", startFrame: 4 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 8 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 3 },
             ],
             Special: [],
             Grab: [
@@ -218,8 +218,8 @@ const allCharacterData = {
                 { fullName: "Forward Air", shortName: "Fair", startFrame: 12 },
                 { fullName: "Up Air", shortName: "Uair", startFrame: 8 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 11 },
-                { fullName: "Back Air", shortName: "Bair", startFrame: 6 },
-                { fullName: "Neutral Air", shortName: "Nair", startFrame: 8 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 5 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 7 },
             ],
             Special: [],
             Grab: [
@@ -259,7 +259,7 @@ const allCharacterData = {
                 { fullName: "Up Air", shortName: "Uair", startFrame: 12 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 13 },
                 { fullName: "Back Air", shortName: "Bair", startFrame: 7 },
-                { fullName: "Neutral Air", shortName: "Nair", startFrame: 6 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 5 },
             ],
             Special: [],
             Grab: [
@@ -382,7 +382,7 @@ const allCharacterData = {
                 { fullName: "Forward Air", shortName: "Fair", startFrame: 7 },
                 { fullName: "Up Air", shortName: "Uair", startFrame: 8 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 12 },
-                { fullName: "Back Air", shortName: "Bair", startFrame: 9 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 7 },
                 { fullName: "Neutral Air", shortName: "Nair", startFrame: 5 },
             ],
             Special: [],
@@ -420,10 +420,10 @@ const allCharacterData = {
             ],
             Aerial: [
                 { fullName: "Forward Air", shortName: "Fair", startFrame: 10 },
-                { fullName: "Up Air", shortName: "Uair", startFrame: 8 },
+                { fullName: "Up Air", shortName: "Uair", startFrame: 6 },
                 { fullName: "Down Air", shortName: "Dair", startFrame: 14 },
                 { fullName: "Back Air", shortName: "Bair", startFrame: 9 },
-                { fullName: "Neutral Air", shortName: "Nair", startFrame: 5 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 4 },
             ],
             Special: [],
             Grab: [
