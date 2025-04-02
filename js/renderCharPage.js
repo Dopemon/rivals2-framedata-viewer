@@ -443,6 +443,46 @@ const allCharacterData = {
                 { fullName: "LedgeStand", shortName: "LedgeStand", startFrame: 0 },
             ]
         }
+    },
+    Olympia: {
+        character: "Olympia",
+        moves: {
+            Grounded: [
+                { fullName: "Jab-1", shortName: "Jab-1", startFrame: 2 },
+                { fullName: "Jab-2", shortName: "Jab-2", startFrame: 4 },
+                { fullName: "Jab-3", shortName: "Jab-3", startFrame: 5 },
+                { fullName: "Forward Strong", shortName: "Fstrong", startFrame: 22 },
+                { fullName: "Up Strong", shortName: "Ustrong", startFrame: 15 },
+                { fullName: "Down Strong", shortName: "Dstrong", startFrame: 6 },
+                { fullName: "Forward Tilt", shortName: "Ftilt", startFrame: 10 },
+                { fullName: "Up Tilt", shortName: "Utilt", startFrame: 5 },
+                { fullName: "Down Tilt", shortName: "Dtilt", startFrame: 4 }
+            ],
+            Aerial: [
+                { fullName: "Forward Air", shortName: "Fair", startFrame: 13 },
+                { fullName: "Up Air", shortName: "Uair", startFrame: 6 },
+                { fullName: "Down Air", shortName: "Dair", startFrame: 14 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 5 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 4 },
+            ],
+            Special: [],
+            Grab: [
+                { fullName: "Grab", shortName: "Grab", startFrame: 6 },
+                { fullName: "Dash Grab", shortName: "DashGrab", startFrame: 9 },
+                { fullName: "Pivot Grab", shortName: "PivotGrab", startFrame: 9 },
+            ],
+            Getup: [
+                { fullName: "GetupAttack", shortName: "GetupAttack", startFrame: 15 },
+                { fullName: "GetupNeutral", shortName: "GetupNeutral", startFrame: 0 },
+                { fullName: "GetupRollBackward", shortName: "GetupRollBackward", startFrame: 0 },
+                { fullName: "GetupRollForward", shortName: "GetupRollForward", startFrame: 0 },
+                { fullName: "GetupSpecial", shortName: "GetupSpecial", startFrame: 23 },
+                { fullName: "LedgeAttack", shortName: "LedgeAttack", startFrame: 23 },
+                { fullName: "Ledgeroll", shortName: "Ledgeroll", startFrame: 0 },
+                { fullName: "LedgeSpecial", shortName: "LedgeSpecial", startFrame: 36 },
+                { fullName: "LedgeStand", shortName: "LedgeStand", startFrame: 0 },
+            ]
+        }
     }
 }
 
