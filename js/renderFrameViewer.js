@@ -98,12 +98,13 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     }));
 
     // [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${JSON.stringify(event)}`)}));
-    backwards.on('click', (e) => { [video1, video2].forEach(el => {
-      let newTime = roundUpToNearestFrame(el[0].currentTime - oneFrameLength);
-      newTime < 0 ? el[0].currentTime = el[0].duration : el[0].currentTime = newTime;
-    })});
-    forwards.on('click', (e) => { [video1, video2].forEach(el => { 
-      let newTime = roundUpToNearestFrame(el[0].currentTime + oneFrameLength);
-      newTime > el[0].duration ? el[0].currentTime = 0 : el[0].currentTime = newTime;
-    }) });
+    backwards.on('click', (e) => { 
+      let nextFrame = (roundUpToNearestFrame(video1[0].currentTime - oneFrameLength));
+      [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame < 0 ? video1[0].duration : nextFrame) })
+    });
+
+    forwards.on('click', (e) => { 
+      let nextFrame = roundUpToNearestFrame(video1[0].currentTime + oneFrameLength);
+      [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame > video1[0].duration ? 0 : nextFrame) });
+    });
   }));
