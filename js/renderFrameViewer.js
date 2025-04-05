@@ -97,7 +97,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
         el.off('canplaythrough');
     }));
 
-    [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${event}`)}));
+    // [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${JSON.stringify(event)}`)}));
     backwards.on('click', (e) => { [video1, video2].forEach(el => {
       let newTime = roundUpToNearestFrame(el[0].currentTime - oneFrameLength);
       newTime < 0 ? el[0].currentTime = el[0].duration : el[0].currentTime = newTime;
