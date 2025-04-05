@@ -103,7 +103,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
       newTime < 0 ? el[0].currentTime = el[0].duration : el[0].currentTime = newTime;
     })});
     forwards.on('click', (e) => { [video1, video2].forEach(el => { 
-      let newTime = roundDownToNearestFrame(el[0].currentTime + oneFrameLength);
+      let newTime = roundUpToNearestFrame(el[0].currentTime + oneFrameLength);
       newTime > el[0].duration ? el[0].currentTime = 0 : el[0].currentTime = newTime;
     }) });
   }));
