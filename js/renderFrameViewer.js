@@ -57,13 +57,13 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     var roundDownToNearestFrame = (time) => Math.floor(time/0.017)*0.017;
     var roundUpToNearestFrame = (time) => Math.ceil(time/0.017)*0.017;
     var oneFrameLength = 0.017;
-    infoButton.on('click', () => { infoContainer.hasClass("top") ? lowerElement(infoContainer) : raiseElement(infoContainer)});
-    const raiseElement = (el) => { el.removeClass("bottom").addClass("top") };
-    const lowerElement = (el) => { el.removeClass("top").addClass("bottom") };
-    const toggleTopBottom = (el) => { el.hasClass("top") ? lowerElement(el) : raiseElement(el) }
+    infoButton.on('click', () => { infoContainer.hasClass("top") ? fvLowerElement(infoContainer) : fvRaiseElement(infoContainer)});
+    const fvRaiseElement = (el) => { el.removeClass("bottom").addClass("top") };
+    const fvLowerElement = (el) => { el.removeClass("top").addClass("bottom") };
+    const fvToggleTopBottom = (el) => { el.hasClass("top") ? fvLowerElement(el) : fvRaiseElement(el) }
     [hbOn, hbOff].forEach( el => el.on('click', () => { 
-      [hbOn, hbOff].forEach(el => toggleShow(el)); 
-      [video1, video2].forEach(el => toggleTopBottom(el))
+      [hbOn, hbOff].forEach(el => fvToggleShow(el)); 
+      [video1, video2].forEach(el => fvToggleTopBottom(el))
     }));
   
     playButton.on('click', () => {[video1, video2].forEach(el => el[0].play())});
@@ -78,16 +78,16 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     });
   
     [playButton, pauseButton].forEach( el => el.on('click', () => { 
-      [playButton, pauseButton].forEach(el => toggleShow(el)); 
+      [playButton, pauseButton].forEach(el => fvToggleShow(el)); 
     }));
   
-    const expandElement = (inline) => {inline.removeClass("inline").addClass("expanded");}
-    const inlineElement = (expanded) => {expanded.removeClass("expanded").addClass("inline");}
-    toggleModal.on('click', () => {modal.hasClass("expanded") ? inlineElement(modal) : expandElement(modal)});
+    const fvExpandElement = (inline) => {inline.removeClass("inline").addClass("expanded");}
+    const fvInlineElement = (expanded) => {expanded.removeClass("expanded").addClass("inline");}
+    toggleModal.on('click', () => {modal.hasClass("expanded") ? fvInlineElement(modal) : fvExpandElement(modal)});
   
-    const hideElement = (showing) => {showing.removeClass("show").addClass("hide");}
-    const showElement = (hiding) => {hiding.removeClass("hide").addClass("show");}
-    const toggleShow = (el) => { el.hasClass("show") ? hideElement(el) : showElement(el) }
+    const fvHideElement = (showing) => {showing.removeClass("show").addClass("hide");}
+    const fvShowElement = (hiding) => {hiding.removeClass("hide").addClass("show");}
+    const fvToggleShow = (el) => { el.hasClass("show") ? fvHideElement(el) : fvShowElement(el) }
         
     [video1, video2].forEach( el => el.on('canplaythrough', () => { 
         el[0].load();
