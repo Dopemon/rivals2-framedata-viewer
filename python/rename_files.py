@@ -13,6 +13,17 @@ def rename_files_in_directory(directory):
                 new_path = os.path.join(directory, new_name)
                 os.rename(old_path, new_path)
                 print(f"Renamed: {filename} -> {new_name}")
+            if len(parts) == 4:
+                char, type_, move, number = parts
+                type_upper = type_.upper()
+                if number.isdigit():
+                    new_name = f"{char}_{move}_{type_upper}_{int(number)-1}.webm"
+                else:
+                    new_name = f"{char}_{move}_{type_upper}_{number}.webm"
+                old_path = os.path.join(directory, filename)
+                new_path = os.path.join(directory, new_name)
+                os.rename(old_path, new_path)
+                print(f"Renamed: {filename} -> {new_name}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
