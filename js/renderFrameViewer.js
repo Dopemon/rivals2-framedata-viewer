@@ -11,7 +11,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let source2 = $(`<source src="${url2}">Your browser does not support the video tag.</source>`);
     let controlsContainer = $( `<div class=""></div>` );
   
-    let iconSize = (size) => `${size ?? 4}rem`;
+    let iconSize = (size) => `${size || 4}rem`;
     let iconBackwards = (size = 16) => $(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>`);
     let iconForwards = (size) => $(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size} "fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>`);
     let iconToggleOff = (size) => $(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size} "fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16"><path d="M11 4a4 4 0 0 1 0 8H8a5 5 0 0 0 2-4 5 5 0 0 0-2-4zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8M0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5"/></svg>`);
