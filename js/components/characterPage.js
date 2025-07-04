@@ -14,7 +14,7 @@ let charMoveCard = (charName, groupName, moves) => $(`
                 ${moves?.map(m => `
                     <div class="col-lg-6 col-sm-10 mt-5">
                         <h4 class="d-block">${m.fullName}</h4>
-                        <div class="d-block"><div class="fd-modal">./files/videos/${charName}_${m.shortName.split('-')[0]}_NHB_${m.shortName.split('-')[1] ? Number(m.shortName.split('-')[1])-1 : 0}.webm?f=${m.startFrame} && ./files/videos/${charName}_${m.shortName}_WHB_${m.shortName.split('-')[1] ? Number(m.shortName.split('-')[1])-1 : 0}.webm?f=${m.startFrame}</div></div>
+                        <div class="d-block"><div class="fd-modal">./files/videos/${charName}_${m.shortName.split('-')[0]}_NHB_${m.shortName.split('-')[1] ? Number(m.shortName.split('-')[1])-1 : 0}.webm?f=${m.startFrame} && ./files/videos/${charName}_${m.shortName.split('-')[0]}_WHB_${m.shortName.split('-')[1] ? Number(m.shortName.split('-')[1])-1 : 0}.webm?f=${m.startFrame}</div></div>
                     </div>
                 `).join('')}
             </div>
