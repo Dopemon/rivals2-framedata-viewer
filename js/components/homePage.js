@@ -2,6 +2,7 @@ let charSelector = (charInfo) => $(`
     <div class="col-md-4 px-xl-5 py-xl-3 px-md-3 py-md-1 px-sm-5 py-sm-3">
         <a href="./${charInfo.name}.html">
             <img class="card-img-top" src="${charInfo.iconUrl}" data-holder-rendered="true">
+            <h1>${charInfo.name}</h1>
         </a>
     </div>
 `);

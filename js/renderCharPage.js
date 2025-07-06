@@ -1,6 +1,46 @@
 // import { generateMoveCards } from './components/characterPage.js';
 
 const allCharacterData = {
+    Absa: {
+        character: "Absa",
+        moves: {
+            Grounded: [
+                { fullName: "Jab-1", shortName: "Jab-1", startFrame: 4 },
+                { fullName: "Jab-2", shortName: "Jab-2", startFrame: 2 },
+                { fullName: "Forward Strong", shortName: "Fstrong", startFrame: 11 },
+                { fullName: "Up Strong", shortName: "Ustrong", startFrame: 15 },
+                { fullName: "Down Strong", shortName: "Dstrong", startFrame: 8 },
+                { fullName: "Forward Tilt-1", shortName: "Ftilt-1", startFrame: 7 },
+                { fullName: "Forward Tilt-2", shortName: "Ftilt-2", startFrame: 12 },
+                { fullName: "Up Tilt", shortName: "Utilt", startFrame: 10 },
+                { fullName: "Down Tilt", shortName: "Dtilt", startFrame: 5 }
+            ],
+            Aerial: [
+                { fullName: "Forward Air", shortName: "Fair", startFrame: 8 },
+                { fullName: "Up Air", shortName: "Uair", startFrame: 16 },
+                { fullName: "Down Air", shortName: "Dair", startFrame: 8 },
+                { fullName: "Back Air", shortName: "Bair", startFrame: 12 },
+                { fullName: "Neutral Air", shortName: "Nair", startFrame: 6 },
+            ],
+            Special: [],
+            Grab: [
+                { fullName: "Grab", shortName: "Grab", startFrame: 6 },
+                { fullName: "Dash Grab", shortName: "DashGrab", startFrame: 9 },
+                { fullName: "Pivot Grab", shortName: "PivotGrab", startFrame: 9 },
+            ],
+            Getup: [
+                { fullName: "GetupAttack", shortName: "GetupAttack", startFrame: 19 },
+                { fullName: "GetupNeutral", shortName: "GetupNeutral", startFrame: 0 },
+                { fullName: "GetupRollBackward", shortName: "GetupRollBackward", startFrame: 0 },
+                { fullName: "GetupRollForward", shortName: "GetupRollForward", startFrame: 0 },
+                { fullName: "GetupSpecial", shortName: "GetupSpecial", startFrame: 46},
+                { fullName: "LedgeAttack", shortName: "LedgeAttack", startFrame: 26 },
+                { fullName: "Ledgeroll", shortName: "Ledgeroll", startFrame: 0 },
+                { fullName: "LedgeSpecial", shortName: "LedgeSpecial", startFrame: 24 },
+                { fullName: "LedgeStand", shortName: "LedgeStand", startFrame: 0 },
+            ]
+        }
+    },
     Clairen: {
         character: "Clairen",
         moves: {
