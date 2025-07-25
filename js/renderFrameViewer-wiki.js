@@ -25,8 +25,8 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let backwards = $( `<button class="fd-control-button move backward"></button>` ).append(iconBackwards(iconSize()));
     let forwards = $( `<button class="fd-control-button move forward"></button>` ).append(iconForwards(iconSize()));
     let toggleIcons = $( `<div class=""></div>`);
-    let hbOff = $(`<button class="fd-control-button toggle hitboxes off show"></button>`).append(iconToggleOff(iconSize()));
-    let hbOn = $(`<button class="fd-control-button toggle hitboxes on hide"></button>`).append(iconToggleOn(iconSize()));
+    let hbOff = $(`<button class="fd-control-button toggle hitboxes off hide"></button>`).append(iconToggleOff(iconSize()));
+    let hbOn = $(`<button class="fd-control-button toggle hitboxes on show"></button>`).append(iconToggleOn(iconSize()));
     let toggleModal = $(`<button class="fd-control-button toggle"></button>`).append(iconExpand(iconSize()));
   
     let playButton = $(`<button class="fd-control-button show"></button>`).append(iconPlay(iconSize()));
