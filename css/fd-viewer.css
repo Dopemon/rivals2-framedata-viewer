@@ -219,9 +219,6 @@
   display: flex;
 }
 
-
-
-
 /* MEDIA BREAKPOINTS FOR MODAL */
 
 /* Small devices (landscape phones, 576px and up) */
@@ -230,6 +227,10 @@
     max-width: 85%;
     width: 100%;
     padding-top: 70%;
+  }
+  .fd-modal.inline .frameData .fd-controls-direction,
+  .fd-modal.inline .frameData .fd-controls-toggle {
+    height: 15%;
   }
 }
 
@@ -248,6 +249,20 @@
     max-width: 75%;
     width: 60%;
     padding-top: 50%;
+  }
+  .fd-modal.inline .frameData .fd-controls-direction,
+  .fd-modal.inline .frameData .fd-controls-toggle {
+    height: 25%;
+  }
+  .fd-modal.inline .frameData .fd-controls-direction .forward,
+  .fd-modal.inline .frameData .fd-controls-direction .backward
+  {
+    display: none;
+  }
+  .fd-modal.inline .frameData .fd-controls-toggle .info,
+  .fd-modal.inline .frameData .fd-controls-toggle .hitboxes
+  {
+    display: none;
   }
 }
 
