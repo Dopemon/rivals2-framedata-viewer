@@ -58,8 +58,8 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     controlsContainer.append(backwards).append(playButton).append(pauseButton).append(forwards);
     modal.append(videoContainer);
   
-    var roundDownToNearestFrame = (time) => Math.floor(time/0.017)*0.017;
-    var roundUpToNearestFrame = (time) => Math.ceil(time/0.017)*0.017;
+    // var roundDownToNearestFrame = (time) => Math.floor(time/0.017)*0.017;
+    // var roundUpToNearestFrame = (time) => Math.ceil(time/0.017)*0.017;
     var oneFrameLength = 0.017;
     infoButton.on('click', () => { infoContainer.hasClass("top") ? fvLowerElement(infoContainer) : fvRaiseElement(infoContainer)});
     const fvRaiseElement = (el) => { el.removeClass("bottom").addClass("top") };
@@ -112,12 +112,14 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
 
     // [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${JSON.stringify(event)}`)}));
     backwards.on('click', (e) => { 
-      let nextFrame = (roundUpToNearestFrame(video1[0].currentTime - oneFrameLength));
+      // let nextFrame = (roundUpToNearestFrame(video1[0].currentTime - oneFrameLength));
+      let nextFrame = video1[0].currentTime - oneFrameLength;
       [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame < 0 ? video1[0].duration : nextFrame) })
     });
 
     forwards.on('click', (e) => { 
-      let nextFrame = roundUpToNearestFrame(video1[0].currentTime + oneFrameLength);
+      // let nextFrame = roundUpToNearestFrame(video1[0].currentTime + oneFrameLength);
+      let nextFrame = video1[0].currentTime + oneFrameLength;
       [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame > video1[0].duration ? 0 : nextFrame) });
     });
   }));
