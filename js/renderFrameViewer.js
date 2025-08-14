@@ -60,7 +60,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
   
     var roundDownToNearestFrame = (time) => Math.floor(time/oneFrameLength)*oneFrameLength;
     var roundUpToNearestFrame = (time) => Math.ceil(time/oneFrameLength)*oneFrameLength;
-    var oneFrameLength = 0.015625; // 1/64
+    var oneFrameLength = 0.017; // 1/59 (but not really, it's rounded to 2 decimal places)
     infoButton.on('click', () => { infoContainer.hasClass("top") ? fvLowerElement(infoContainer) : fvRaiseElement(infoContainer)});
     const fvRaiseElement = (el) => { el.removeClass("bottom").addClass("top") };
     const fvLowerElement = (el) => { el.removeClass("top").addClass("bottom") };
