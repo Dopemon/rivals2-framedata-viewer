@@ -100,23 +100,28 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
         [hitboxTab].forEach( el => el.on('click', () => { 
           video1[0].load();
           video2[0].load();
+          loadFAF();
         }));
     }else{
         [downloadContainer].forEach( el => el.on('click', () => { 
           video1[0].load();
           video2[0].load();
           el.removeClass("show-flex").addClass("hide");
+          loadFAF();
         }));
     }
 
-    [video1, video2].forEach( el => el.on('canplaythrough', () => { 
-        el[0].load();
-        el[0].play(); 
-        el[0].currentTime = 0+(currentFrame*oneFrameLength); 
-        el[0].pause(); 
-        el.off('canplaythrough');
-    }));
+    const loadFAF = () => {
+      [video1, video2].forEach( el => el.on('canplaythrough', () => { 
+          el[0].load();
+          el[0].play(); 
+          el[0].currentTime = 0+(currentFrame*oneFrameLength); 
+          el[0].pause(); 
+          el.off('canplaythrough');
+      }));
+    }
 
+    loadFAF();
 
     // [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${JSON.stringify(event)}`)}));
     backwards.on('click', (e) => { 
