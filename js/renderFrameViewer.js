@@ -10,6 +10,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let source1 = $(`<source src="${url1}">Your browser does not support the video tag.</source>`);
     let source2 = $(`<source src="${url2}">Your browser does not support the video tag.</source>`);
     let controlsContainer = $( `<div class=""></div>` );
+    const hitboxTab = modal.parent().parent().parent().parent().$("#tabber-Hitboxes-label");
   
     let iconSize = (size) => `${size || 4}rem`;
     let iconBackwards = (size = 16) => $(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>`);
@@ -37,7 +38,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let infoContainer = $(`<div class="info-container"></div>`)
     let infoRow = $(`<div class="info-container-row"></div>`)
     let infoText = (text) => $(`<p font-size=1rem;>${text}</p>`);
-  
+
     downloadContainer.append(iconDownload(iconSize()));
 
     infoContainer.append(infoRow.clone().append(iconPlay(iconSize(2))).append(infoText("Play video.")));
@@ -54,12 +55,11 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     video1.append(source1);
     video2.append(source2);
     infoContainer.append(infoRow.clone());
-    videoContainer.append(toggleIcons).append(video1).append(video2).append(infoContainer).append(controlsContainer).append(downloadContainer);
+    videoContainer.append(toggleIcons).append(video1).append(video2).append(infoContainer).append(controlsContainer)
+    if(!hitboxTab){videoContainer.append(downloadContainer);}
     controlsContainer.append(backwards).append(playButton).append(pauseButton).append(forwards);
     modal.append(videoContainer);
   
-    // var roundDownToNearestFrame = (time) => Math.floor(time/0.017)*0.017;
-    // var roundUpToNearestFrame = (time) => Math.ceil(time/0.017)*0.017;
     var oneFrameLength = 0.017;
     infoButton.on('click', () => { infoContainer.hasClass("top") ? fvLowerElement(infoContainer) : fvRaiseElement(infoContainer)});
     const fvRaiseElement = (el) => { el.removeClass("bottom").addClass("top") };
@@ -92,14 +92,19 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     const fvHideElement = (showing) => {showing.removeClass("show").addClass("hide");}
     const fvShowElement = (hiding) => {hiding.removeClass("hide").addClass("show");}
     const fvToggleShow = (el) => { el.hasClass("show") ? fvHideElement(el) : fvShowElement(el) }
-        
-    [downloadContainer].forEach( el => el.on('click', () => { 
-      video1[0].load();
-      video2[0].load();
-      console.log(el);
-      el.removeClass("show-flex").addClass("hide");
-      console.log("told it to load")
-    }));
+
+    if(hitboxTab){
+        [hitboxTab].forEach( el => el.on('click', () => { 
+          video1[0].load();
+          video2[0].load();
+        }));
+    }else{
+        [downloadContainer].forEach( el => el.on('click', () => { 
+          video1[0].load();
+          video2[0].load();
+          el.removeClass("show-flex").addClass("hide");
+        }));
+    }
 
     [video1, video2].forEach( el => el.on('canplaythrough', () => { 
         el[0].load();
@@ -112,13 +117,11 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
 
     // [video1, video2].forEach( el => el.on('error', (event) => {console.log(`VIDEO ERROR: ${JSON.stringify(event)}`)}));
     backwards.on('click', (e) => { 
-      // let nextFrame = (roundUpToNearestFrame(video1[0].currentTime - oneFrameLength));
       let nextFrame = video1[0].currentTime - oneFrameLength;
       [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame < 0 ? video1[0].duration : nextFrame) })
     });
 
     forwards.on('click', (e) => { 
-      // let nextFrame = roundUpToNearestFrame(video1[0].currentTime + oneFrameLength);
       let nextFrame = video1[0].currentTime + oneFrameLength;
       [video1, video2].forEach(el => { el[0].currentTime = ( nextFrame > video1[0].duration ? 0 : nextFrame) });
     });
