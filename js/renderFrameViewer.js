@@ -10,7 +10,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let source1 = $(`<source src="${url1}">Your browser does not support the video tag.</source>`);
     let source2 = $(`<source src="${url2}">Your browser does not support the video tag.</source>`);
     let controlsContainer = $( `<div class=""></div>` );
-    const hitboxTab 
+    let hitboxTab;
     if(modal.parent().parent().parent().parent().$("#tabber-Hitboxes-label")){
         hitboxTab = modal.parent().parent().parent().parent().$("#tabber-Hitboxes-label");
   
