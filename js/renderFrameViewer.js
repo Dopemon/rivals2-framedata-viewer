@@ -10,7 +10,7 @@ $(window).load($(".fd-modal").toArray().forEach((modal, i) => {
     let source1 = $(`<source src="${url1}">Your browser does not support the video tag.</source>`);
     let source2 = $(`<source src="${url2}">Your browser does not support the video tag.</source>`);
     let controlsContainer = $( `<div class=""></div>` );
-    const hitboxTab = modal.parent().parent().parent().parent().$("#tabber-Hitboxes-label");
+    const hitboxTab = modal.parent() ?? modal.parent().parent().parent().parent().$("#tabber-Hitboxes-label");
   
     let iconSize = (size) => `${size || 4}rem`;
     let iconBackwards = (size = 16) => $(`<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg>`);
